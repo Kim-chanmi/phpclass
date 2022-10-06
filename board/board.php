@@ -38,7 +38,16 @@
                 </div>
                 <div class="board__search">
                     <div class="left">
-                        * 총 <em>n</em>건의 게시글이 등록되어 있습니다<div class=""></div>
+                        <!-- * 총 <em>n</em>건의 게시글이 등록되어 있습니다. -->
+<?php
+    $sql = "SELECT count(myBoardID) FROM myBoard";
+    $result = $connect -> query($sql);
+
+    $boardCount = $result -> fetch_array(MYSQLI_ASSOC);
+    $boardCount = $boardCount['count(myBoardID)'];
+    
+    echo "* 총 <em>{$boardCount}</em>건의 게시물이 등록되어 있습니다.";
+?>
                     </div>
                     <div class="right">
                         <form action="boardSearch.php" name="boardSearch" method="get">
@@ -115,6 +124,8 @@
                 echo "<td>".$info['boardView']."</td>";
                 echo "</tr>";
             }
+        } else {
+            echo "<tr><td colspan='4'>게시글이 없습니다.</td></tr>";
         }
     }
 ?>
@@ -259,13 +270,7 @@
     </main>
     <!-- main -->
 
-    <footer id="footer">
-        <h2>푸터 영역입니다.</h2>
-        <div class="footer__inner container">
-            <address>Copyright @2022 webstoryboy</address>
-            <div>blog by webstoryboy</div>
-        </div>
-    </footer>
+    <?php include "../include/footer.php" ?>
     <!-- footer -->
 
     <?php include "../login/login.php" ?>
