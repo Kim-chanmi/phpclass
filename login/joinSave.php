@@ -16,30 +16,7 @@
     </div>
     <!-- skip -->
 
-    <header id="header">
-        <div class="header__inner container">
-            <div class="left">
-                <ul>
-                    <li><a href="../main/main.php" class="star"></a></li>
-                </ul>
-            </div>
-            <h1><a href="../main/main.php">PHP BLOG</a></h1>
-            <div class="right">
-                <ul>
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="../login/join.php">회원가입</a></li>
-                </ul>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#"><span>로그인</span></a></li>
-                    <li><a href="#"><span>블로그</span></a></li>
-                    <li><a href="#"><span>로그아웃</span></a></li>
-                    <li><a href="#"><span>연락처</span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php include "../include/header.php" ?>
     <!-- header -->
 
     <main id="main">
@@ -189,13 +166,8 @@
         <!-- banner -->
     </main>
     <!-- main -->
-    <footer id="footer">
-        <h2>푸터 영역입니다.</h2>
-        <div class="footer__inner container">
-            <address>Copyright @2022 webstoryboy</address>
-            <div>blog by webstoryboy</div>
-        </div>
-    </footer>
+    
+    <?php include "../include/footer.php" ?>
     <!-- footer -->
 
 </body>
